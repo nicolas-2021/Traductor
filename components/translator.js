@@ -98,10 +98,8 @@ replaceAll(text,matchesMap){
 
 replaceAllWithHighLight(text,matchesMap){
    const re = new RegExp(Object.keys(matchesMap).join("|"), "gi");
-   return text.replace(re, (match)=>{
-      return `<span class="highlight">
-        ${matchesMap[match.toLowerCase()]}
-      </span>`;
+   return text.replace(re, (matched)=>{
+      return `<span class="highlight">${matchesMap[matched.toLowerCase()]}</span>`;
    });
 };
 
